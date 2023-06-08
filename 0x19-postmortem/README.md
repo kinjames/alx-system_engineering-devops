@@ -1,8 +1,11 @@
 # Web Stack Outage Incident Postmortem
+![](https://t3.ftcdn.net/jpg/04/92/09/72/240_F_492097246_yagE8x9Uk8M9IekPy7GBuE0x1Uoa7esD.jpg)
 
 ## Issue Summary
+![](https://www.cienotes.com/wp-content/uploads/2019/07/summaryblackboard.jpg)
 - **Duration**: June 5, 2023, 10:00 AM to June 6, 2023, 2:00 AM (UTC)
 - **Impact**: The service "ABC Web Application" experienced intermittent downtime and severe performance degradation, affecting approximately 75% of users. Users reported slow page load times, frequent timeouts, and difficulty accessing critical features.
+
 
 ## Timeline
 - **10:00 AM**: Issue detected through monitoring alerts indicating a high number of HTTP 500 errors.
@@ -20,10 +23,12 @@
 - **10:00 PM**: Identified that the issue originated from an inefficient API call in the application code.
 
 ## Root Cause and Resolution
+![](https://blog.systemsengineering.com/hs-fs/hubfs/blog-files/Root%20Cause.jpg?width=600&name=Root%20Cause.jpg)
 - **Root cause**: An API call to an external service was made synchronously, causing a delay in processing requests and leading to performance degradation and occasional timeouts.
 - **Resolution**: The application code was refactored to make the API call asynchronously, improving response times and eliminating the performance bottleneck.
 
 ## Corrective and Preventative Measures
+![](https://cdn-ccchn.nitrocdn.com/eoxXytShChgscESECFYcqdYPaOaOGMwn/assets/images/optimized/rev-fbc0c0e/wp-content/uploads/2021/06/prevent-incidents.png)
 - Improve monitoring capabilities to proactively detect performance issues and errors.
 - Implement a code review process to identify and address potential performance issues and inefficient API calls.
 - Conduct regular load testing to simulate high traffic scenarios and identify any performance bottlenecks before they impact users.
